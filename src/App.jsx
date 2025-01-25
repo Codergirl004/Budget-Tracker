@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
-import CreateAccount from "./components/CreateAccount"; // Import the CreateAccount component
+import CreateAccount from "./components/CreateAccount";
 
 const App = () => {
   return (
@@ -10,7 +10,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/create-account" element={<CreateAccount />} /> {/* Add this route */}
+        <Route path="/create-account" element={<CreateAccount />} />
       </Routes>
     </Router>
   );

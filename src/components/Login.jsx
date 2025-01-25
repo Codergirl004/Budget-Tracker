@@ -14,11 +14,10 @@ const Login = () => {
     const validUsername = "admin";
     const validPassword = "12345";
 
-    // Validation logic
     if (username === validUsername && password === validPassword) {
       setError("");
       alert("Login Successful!");
-      navigate("/dashboard"); // Redirect to the dashboard page
+      navigate("/dashboard"); // Redirect to Dashboard
     } else {
       setError("Invalid username or password");
     }
@@ -26,35 +25,48 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <h2>Login</h2>
-      <form onSubmit={handleLogin} className="login-form">
-        <div>
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            placeholder="Enter your username"
-            required
-          />
+      <div className="login-card">
+        <h2>Login</h2>
+        <form onSubmit={handleLogin} className="login-form">
+          {/* Username */}
+          <div className="form-group">
+            <label htmlFor="username">Username:</label>
+            <input
+              type="text"
+              id="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Enter your username"
+              required
+            />
+          </div>
+
+          {/* Password */}
+          <div className="form-group">
+            <label htmlFor="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+
+          {/* Error Message */}
+          {error && <p className="error-message">{error}</p>}
+
+          {/* Submit Button */}
+          <button type="submit" className="login-button">Login</button>
+        </form>
+
+        {/* Create Account Link */}
+        <div className="create-account-link">
+          <p>
+            Don't have an account? <a href="/create-account">Create one here</a>
+          </p>
         </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Enter your password"
-            required
-          />
-        </div>
-        {error && <p className="error-message">{error}</p>}
-        <button type="submit">Login</button>
-      </form>
-      <div className="create-account-link">
-        <p>Don't have an account? <a href="/create-account">Create one here</a></p>
       </div>
     </div>
   );
