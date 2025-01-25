@@ -34,7 +34,7 @@ const Dashboard = () => {
           <span>Help</span>
         </div>
 
-        {/* Logout Button */}
+        {/* Logout Button moved below Help */}
         <div className="sidebar-item logout-btn" onClick={handleLogout}>
           <FaSignOutAlt size={24} />
           <span>Logout</span>
@@ -43,8 +43,8 @@ const Dashboard = () => {
 
       {/* Main Dashboard Content */}
       <div className="dashboard-content">
-        <h1>Welcome to Budget Tracker!</h1>
-        <p>"Your partner in smarter spending."</p>
+        <h1 className="welcome-title">Welcome to Budget Tracker!</h1>
+        <p className="highlighted-caption">"Your partner in smarter spending."</p>
 
         {/* Wishlist Tracker */}
         <div className="dashboard-box">

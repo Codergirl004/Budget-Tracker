@@ -1,3 +1,4 @@
+/*trackexpense.css*/
 .track-expense-container {
     display: flex;
     justify-content: center;
@@ -26,7 +27,6 @@
     margin-bottom: 5px;
     font-weight: bold;
   }
-  
   input {
     width: 100%;
     padding: 10px;
@@ -61,4 +61,3 @@
     border-radius: 4px;
     margin-bottom: 10px;
   }
-  

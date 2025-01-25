@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./CreateAccount.css";
 
 const CreateAccount = () => {
   const [username, setUsername] = useState("");
@@ -13,23 +14,26 @@ const CreateAccount = () => {
   const handleCreateAccount = (e) => {
     e.preventDefault();
 
+    // Validate passwords match
     if (password !== confirmPassword) {
       setError("Passwords do not match.");
       return;
     }
 
+    // Check if all fields are filled
     if (!username || !password || !mobileNumber || !email) {
       setError("Please fill in all fields.");
       return;
     }
 
-    // Optional email format validation
+    // Email format validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       setError("Please enter a valid email address.");
       return;
     }
 
+    // Success alert and navigate to login page
     alert("Account created successfully!");
     navigate("/"); // Redirect to login
   };

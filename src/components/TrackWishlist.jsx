@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./TrackWishlist.css"; // Import CSS for styling
 
 const TrackWishlist = () => {
   const [wishItem, setWishItem] = useState("");
@@ -17,6 +18,12 @@ const TrackWishlist = () => {
     // Add the new item to the wishlist
     setWishList([...wishList, wishItem]);
     setWishItem(""); // Reset input field
+  };
+
+  // Handle removing an item from the wishlist
+  const handleRemoveItem = (index) => {
+    const updatedWishList = wishList.filter((_, i) => i !== index);
+    setWishList(updatedWishList); // Update wishlist state
   };
 
   // Navigate back to Dashboard
@@ -53,7 +60,15 @@ const TrackWishlist = () => {
           ) : (
             <ul>
               {wishList.map((item, index) => (
-                <li key={index}>{item}</li>
+                <li key={index}>
+                  {item}
+                  <button
+                    className="remove-item-button"
+                    onClick={() => handleRemoveItem(index)}
+                  >
+                    Remove
+                  </button>
+                </li>
               ))}
             </ul>
           )}

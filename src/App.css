@@ -40,7 +40,7 @@
 
 /* Login Page Styles */
 .login-container {
-  background-image: url("/bdpic.jpg"); /* Correct path to the image *//*"D:\bdpic.jpg"*/
+  /*background-image: url("/bdpic.jpg"); /* Correct path to the image *//*"D:\bdpic.jpg"*/
   background-size: cover;
   background-position: center;
   height: 100vh;

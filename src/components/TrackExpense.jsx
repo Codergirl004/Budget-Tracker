@@ -1,3 +1,4 @@
+//trackexpense.jsx//
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./TrackExpense.css";
@@ -28,46 +29,44 @@ const TrackExpense = () => {
     setExpenseName("");
     setExpenseAmount("");
   };
+ // Remove an expense
+ const handleRemoveExpense = (name) => {
+  setExpenses(expenses.filter((expense) => expense.name !== name));
+};
 
-  // Remove an expense
-  const handleRemoveExpense = (name) => {
-    setExpenses(expenses.filter((expense) => expense.name !== name));
-  };
+// Handle back navigation
+const handleBack = () => {
+  navigate("/dashboard");
+};
 
-  // Handle back navigation
-  const handleBack = () => {
-    navigate("/dashboard");
-  };
+return (
+  <div className="track-expense-container">
+    <div className="track-expense-card">
+      <h1>Track Your Expenses</h1>
 
-  return (
-    <div className="track-expense-container">
-      <div className="track-expense-card">
-        <h1>Track Your Expenses</h1>
+      {/* Salary Input */}
+      <div className="form-group">
+        <label>Salary:</label>
+        <input
+          type="number"
+          value={salary}
+          onChange={(e) => setSalary(e.target.value)}
+          placeholder="Enter your salary"
+        />
+      </div>
 
-        {/* Salary Input */}
-        <div className="form-group">
-          <label>Salary:</label>
-          <input
-            type="number"
-            value={salary}
-            onChange={(e) => setSalary(e.target.value)}
-            placeholder="Enter your salary"
-          />
-        </div>
-
-        {/* Savings Input */}
-        <div className="form-group">
-          <label>Savings:</label>
-          <input
-            type="number"
-            value={savings}
-            onChange={(e) => setSavings(e.target.value)}
-            placeholder="Enter your savings"
-          />
-        </div>
-
-        {/* Add Expense Form */}
-        <div className="form-group">
+      {/* Savings Input */}
+      <div className="form-group">
+        <label>Savings:</label>
+        <input
+          type="number"
+          value={savings}
+          onChange={(e) => setSavings(e.target.value)}
+          placeholder="Enter your savings"
+        />
+      </div>
+ {/* Add Expense Form */}
+ <div className="form-group">
           <label>Expense Name:</label>
           <input
             type="text"
@@ -109,5 +108,4 @@ const TrackExpense = () => {
     </div>
   );
 };
-
 export default TrackExpense;

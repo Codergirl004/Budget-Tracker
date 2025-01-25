@@ -1,79 +1,110 @@
 /* Sidebar Styling */
 .sidebar {
-    width: 200px;
-    background-color: #2c3e50;
-    color: white;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    position: fixed;
-  }
-  
-  .sidebar-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
-    cursor: pointer;
-    color: white;
-  }
-  
-  .sidebar-item:hover {
-    color: #3498db;
-  }
-  
-  .logout-btn {
-    margin-top: auto; /* Push the logout button to the bottom */
-  }
-  
-  /* Main Dashboard Content */
-  .dashboard-container {
-    display: flex;
-  }
-  
-  .dashboard-content {
-    margin-left: 220px; /* Leave space for the sidebar */
-    padding: 20px;
-    flex: 1;
-    background-color: #f4f4f9;
-    min-height: 100vh;
-  }
-  
-  h1 {
-    margin-bottom: 20px;
-  }
-  
-  .dashboard-box {
-    background-color: white;
-    border-radius: 8px;
-    padding: 20px;
-    margin-top: 20px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .dashboard-box h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .dashboard-box p {
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
-  
-  .dashboard-box button {
-    padding: 10px 20px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .dashboard-box button:hover {
-    background-color: #2980b9;
-  }
-  
+  width: 200px;
+  background: linear-gradient(135deg, #2c3e50, #34495e); /* Adding a gradient for a modern look */
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  position: fixed;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;  /* Increased gap between icon and text */
+  margin-bottom: 20px;
+  cursor: pointer;
+  color: white;
+  font-size: 18px;  /* Larger text */
+}
+
+.sidebar-item:hover {
+  color: #3498db;  /* Hover color */
+}
+
+.sidebar-item span {
+  font-size: 20px; /* Larger font size */
+}
+
+.sidebar-item svg {
+  font-size: 28px;  /* Larger icon size */
+}
+
+.logout-btn {
+  margin-top: auto;
+}
+
+/* Main Dashboard Content */
+.dashboard-container {
+  display: flex;
+}
+
+.dashboard-content {
+  margin-left: 220px; /* Leave space for the sidebar */
+  padding: 40px;
+  flex: 1;
+  background: linear-gradient(135deg, #ecf0f1, #bdc3c7); /* Subtle gradient for the background */
+  min-height: 100vh;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for content area */
+  border-radius: 10px;
+}
+
+.welcome-title {
+  font-size: 48px;
+  color: #2c3e50;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.highlighted-caption {
+  font-size: 24px;
+  font-style: italic;
+  color: #3498db;
+  font-weight: 600;
+  margin-bottom: 40px;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.highlighted-caption:hover {
+  color: #2980b9;
+}
+
+.dashboard-box {
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px;
+  margin-top: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Larger shadow for depth */
+}
+
+.dashboard-box h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.dashboard-box p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.dashboard-box button {
+  padding: 12px 25px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.dashboard-box button:hover {
+  background-color: #2980b9;
+}
