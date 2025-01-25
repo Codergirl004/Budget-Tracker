@@ -1,24 +1,27 @@
 import React from "react";
-import { FaUserCircle, FaQuestionCircle } from "react-icons/fa";
+import { FaUser, FaQuestionCircle, FaPlus } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import "./Dashboard.css"; // Import a CSS file for better styling
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+
+  const handleProfileClick = () => {
+    navigate("/profile");
+  };
+
   return (
     <div className="dashboard-container">
       <div className="sidebar">
-        <div className="profile-section">
-          <FaUserCircle className="profile-icon" />
-          <p>Welcome, User!</p>
+        <div className="sidebar-item" onClick={handleProfileClick}>
+          <FaUser size={24} />
+          <span>Profile</span>
         </div>
-        <ul className="sidebar-menu">
-          <li>
-            <button className="sidebar-button">Profile</button>
-          </li>
-          <li>
-            <button className="sidebar-button">Help</button>
-          </li>
-        </ul>
+        <div className="sidebar-item">
+          <FaQuestionCircle size={24} />
+          <span>Help</span>
+        </div>
       </div>
-
       <div className="dashboard-content">
         <h1>Welcome to the Dashboard!</h1>
         <p>Here you can track your budget and manage your finances.</p>
