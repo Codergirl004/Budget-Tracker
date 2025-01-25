@@ -99,7 +99,7 @@ const TrackExpense = () => {
         </ul>
 
         {/* Display Remaining Amount */}
-        <h3>Remaining Amount: ${remainingAmount.toFixed(2)}</h3>
+        <h3>Remaining Amount: Rs{remainingAmount.toFixed(2)}</h3>
 
         {/* Back Button */}
         <button onClick={handleBack} className="back-button">

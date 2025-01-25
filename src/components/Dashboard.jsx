@@ -43,8 +43,8 @@ const Dashboard = () => {
 
       {/* Main Dashboard Content */}
       <div className="dashboard-content">
-        <h1>Welcome to the Dashboard!</h1>
-        <p>Here you can track your budget and manage your finances.</p>
+        <h1>Welcome to Budget Tracker!</h1>
+        <p>"Your partner in smarter spending."</p>
 
         {/* Existing features (if any) */}
         <div className="dashboard-box">
