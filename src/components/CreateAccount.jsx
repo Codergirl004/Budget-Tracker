@@ -5,7 +5,8 @@ const CreateAccount = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [mobileNumber, setMobileNumber] = useState(""); // New state for mobile number
+  const [mobileNumber, setMobileNumber] = useState(""); // Mobile number state
+  const [email, setEmail] = useState(""); // Email state
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -17,8 +18,15 @@ const CreateAccount = () => {
       return;
     }
 
-    if (!username || !password || !mobileNumber) { // Check if mobile number is filled
+    if (!username || !password || !mobileNumber || !email) {
       setError("Please fill in all fields.");
+      return;
+    }
+
+    // Optional email format validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setError("Please enter a valid email address.");
       return;
     }
 
@@ -79,6 +87,19 @@ const CreateAccount = () => {
               value={mobileNumber}
               onChange={(e) => setMobileNumber(e.target.value)}
               placeholder="Enter your mobile number"
+              required
+            />
+          </div>
+
+          {/* Email ID */}
+          <div className="form-group">
+            <label htmlFor="email">Email ID:</label>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email address"
               required
             />
           </div>
