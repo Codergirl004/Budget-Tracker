@@ -1,63 +1,42 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
-from flask_bcrypt import Bcrypt
-from flask_login import LoginManager, login_user, login_required, logout_user, current_user
-
-from models import db, bcrypt, User
 from config import Config
 
+# Initialize the Flask app
 app = Flask(__name__)
 app.config.from_object(Config)
 
-# Initialize extensions
-db.init_app(app)
-bcrypt.init_app(app)
+# Initialize the SQLAlchemy object
+db = SQLAlchemy(app)
 
-login_manager = LoginManager(app)
-login_manager.login_view = 'login'
+# Import models here after db is initialized
+from models import User
 
-
-@login_manager.user_loader
-def load_user(user_id):
-    return User.query.get(int(user_id))
-
-
-@app.route('/')
-def home():
-    return render_template('home.html')
-
-
-@app.route('/login', methods=['GET', 'POST'])
+@app.route("/login", methods=["POST"])
 def login():
-    if request.method == 'POST':
-        email = request.form.get('email')
-        password = request.form.get('password')
+    email = request.json.get("email")
+    password = request.json.get("password")
+    
+    user = User.query.filter_by(email=email).first()
+    if user and user.password == password:
+        return jsonify({"message": "Login successful"}), 200
+    return jsonify({"message": "Invalid credentials"}), 401
 
-        # Check if user exists
-        user = User.query.filter_by(email=email).first()
-        if user and bcrypt.check_password_hash(user.password, password):
-            # Log the user in
-            login_user(user)
-            flash('Login Successful!', 'success')
-            return redirect(url_for('dashboard'))
-        else:
-            flash('Login Failed. Check your email or password', 'danger')
+@app.route("/register", methods=["POST"])
+def register():
+    email = request.json.get("email")
+    password = request.json.get("password")
+    
+    existing_user = User.query.filter_by(email=email).first()
+    if existing_user:
+        return jsonify({"message": "User already exists"}), 400
 
-    return render_template('login.html')
+    new_user = User(email=email, password=password)
+    db.session.add(new_user)
+    db.session.commit()
 
+    return jsonify({"message": "User created successfully"}), 201
 
-@app.route('/dashboard')
-@login_required
-def dashboard():
-    return render_template('dashboard.html', name=current_user.email)
-
-
-@app.route('/logout')
-@login_required
-def logout():
-    logout_user()
-    return redirect(url_for('home'))
-
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=True)
+
