@@ -1,4 +1,3 @@
-/* Dashboard.css */
 .dashboard-container {
     display: flex;
     height: 100vh;
@@ -14,6 +13,7 @@
     flex-direction: column;
     align-items: center;
     padding: 20px 0;
+    height: 100%; /* Make sure sidebar stretches full height */
   }
   
   .sidebar-item {
@@ -34,6 +34,11 @@
   .sidebar-item span {
     font-size: 18px;
     flex-grow: 1;
+  }
+  
+  /* Ensure the logout button stays at the bottom */
+  .logout-btn {
+    margin-top: auto; /* Pushes it to the bottom */
   }
   
   .dashboard-content {

@@ -5,6 +5,7 @@ const CreateAccount = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [mobileNumber, setMobileNumber] = useState(""); // New state for mobile number
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -16,7 +17,7 @@ const CreateAccount = () => {
       return;
     }
 
-    if (!username || !password) {
+    if (!username || !password || !mobileNumber) { // Check if mobile number is filled
       setError("Please fill in all fields.");
       return;
     }
@@ -65,6 +66,19 @@ const CreateAccount = () => {
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               placeholder="Confirm your password"
+              required
+            />
+          </div>
+
+          {/* Mobile Number */}
+          <div className="form-group">
+            <label htmlFor="mobileNumber">Mobile Number:</label>
+            <input
+              type="tel"
+              id="mobileNumber"
+              value={mobileNumber}
+              onChange={(e) => setMobileNumber(e.target.value)}
+              placeholder="Enter your mobile number"
               required
             />
           </div>

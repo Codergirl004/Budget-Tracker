@@ -1,3 +1,4 @@
+/* App.css */
 .App {
   text-align: center;
 }
@@ -21,7 +22,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(164, 195, 93);
 }
 
 .App-link {
@@ -35,4 +36,24 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Login Page Styles */
+.login-container {
+  background-image: url("/bdpic.jpg"); /* Correct path to the image *//*"D:\bdpic.jpg"*/
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
 }
