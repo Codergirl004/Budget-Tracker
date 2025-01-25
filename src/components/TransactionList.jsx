@@ -8,7 +8,7 @@ const TransactionList = ({ transactions }) => {
         {transactions.map((transaction, index) => (
           <li
             key={index}
-            className={transaction.type === "Income" ? "income" : "expense"}
+            className={transaction.type === "income" ? "income" : "expense"}
           >
             {transaction.type}: ${transaction.amount.toFixed(2)} (
             {transaction.category})
