@@ -5,6 +5,8 @@ import TrackExpense from "./components/TrackExpense";
 import Login from "./components/Login";
 import CreateAccount from "./components/CreateAccount"; // Added back
 import Profile from "./components/Profile"; // Added back
+import TrackWishlist from "./components/TrackWishlist"; // Import the new Wishlist page
+
 import "./App.css";
 
 const App = () => {
@@ -26,6 +28,9 @@ const App = () => {
           
           {/* Profile Page */}
           <Route path="/profile" element={<Profile />} />
+          {/*track wishlist */}
+          <Route path="/track-wishlist" element={<TrackWishlist />} />
+
         </Routes>
       </div>
     </Router>

@@ -46,13 +46,16 @@ const Dashboard = () => {
         <h1>Welcome to Budget Tracker!</h1>
         <p>"Your partner in smarter spending."</p>
 
-        {/* Existing features (if any) */}
+        {/* Wishlist Tracker */}
         <div className="dashboard-box">
-          <h2>Feature 1</h2>
-          <p>Description of Feature 1</p>
+          <h2>Wishlist Tracker</h2>
+          <p>Manage your wishlist and track your desired purchases.</p>
+          <Link to="/track-wishlist">
+            <button>Track Wish</button>
+          </Link>
         </div>
 
-        {/* New "Track Your Expense" Box */}
+        {/* Track Your Expense */}
         <div className="dashboard-box">
           <h2>Track Your Expense</h2>
           <p>Manage your salary, expenses, and savings effectively.</p>
