@@ -1,20 +1,45 @@
+/* Profile container styles */
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4; /* Light gray background */
+  padding: 20px;
+}
+
+/* Profile card styling */
+.profile-card {
+  background-color: #fff; /* White background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 300px;
+  text-align: center;
+}
+
+/* Profile item styling */
+.profile-item {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.profile-item strong {
+  color: #333; /* Darker text for labels */
+}
+
+/* Back button styling */
 .back-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .back-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .back-button:focus {
-    outline: none;
-  }
-  
+  padding: 10px 15px;
+  background-color: #4caf50; /* Green color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background-color: #45a049; /* Slightly darker green on hover */
+}

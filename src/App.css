@@ -1,59 +1,107 @@
 /* App.css */
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: rgb(164, 195, 93);
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 /* Login Page Styles */
 .login-container {
-  /*background-image: url("/bdpic.jpg"); /* Correct path to the image *//*"D:\bdpic.jpg"*/
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #e0f7fa, #fffde7); /* Soft gradient background */
+  font-family: Arial, sans-serif;
+  padding: 20px;
 }
 
 .login-card {
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  padding: 40px;
+  border-radius: 12px; /* Rounded corners for the card */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
   width: 100%;
   max-width: 400px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out; /* Smooth fade-in animation */
+}
+
+.login-card h2 {
+  font-size: 28px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group label {
+  font-size: 16px;
+  color: #34495e;
+  text-align: left;
+}
+
+.form-group input {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #bdc3c7;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #3498db; /* Blue border on focus */
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.3); /* Subtle glow effect */
+}
+
+.error-message {
+  color: #e74c3c; /* Red for error messages */
+  font-size: 14px;
+  margin-top: -10px;
+  text-align: left;
+}
+
+.login-button {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-button:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.create-account-link {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #7f8c8d;
+}
+
+.create-account-link a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.create-account-link a:hover {
+  text-decoration: underline;
+}
+
+/* Add fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
